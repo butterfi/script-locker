@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_MagazineOct09</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_MagazineOct09</td></tr>
+</thead><tbody>
+<!--anon_MagazineOct09 verifies page /magazine/oct09-->
+<!--last mod: 12/8/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/magazine/oct09</td>
+	<td></td>
+</tr>
+<!--header area-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Core Strategies</td>
+	<td>Core Strategies</td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-found</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--main content-->
+<tr>
+	<td>verifyText</td>
+	<td>mag_title</td>
+	<td>Table of Contents | Oct 2009: The Waldorf Way</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='magazine cover']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=exact:Feedback: Funding Is Only the Beginning</td>
+	<td>exact:Feedback: Funding Is Only the Beginning</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='magazine']/p[2]</td>
+	<td>Education reform requires more than money.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Waldorf-Inspired Public Schools Are on the Rise</td>
+	<td>Waldorf-Inspired Public Schools Are on the Rise</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='magazine']/h3[2]</td>
+	<td>Heart and Soul</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Teens Take on Day Care -- on Their Own School Grounds</td>
+	<td>Teens Take on Day Care -- on Their Own School Grounds</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='magazine']/h3[3]</td>
+	<td>Head of Class</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='magazine']/h3[4]</td>
+	<td>Cool Schools</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=A Learning Space for Learning About Space</td>
+	<td>A Learning Space for Learning About Space</td>
+</tr>
+<!--right side-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edutopia-connect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[3]/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-jump-goto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>headerfooter</td>
+	<td>Previous Issues</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='Feb 2010: Social &amp; Emotional Learning']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Feb 2010: Social &amp; Emotional Learning issue</td>
+	<td>Feb 2010: Social &amp; Emotional Learning issue</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

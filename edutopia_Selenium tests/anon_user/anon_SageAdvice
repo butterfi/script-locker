@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_SageAdvice</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_SageAdvice</td></tr>
+</thead><tbody>
+<!--anon_SageAdvice verifies page /sage-advice-educating-educators-->
+<!--last mod 12/8/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/sage-advice-educating-educators</td>
+	<td></td>
+</tr>
+<!--header area-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Videos</td>
+	<td>Videos</td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-concepts</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--main content-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Core Strategies</td>
+	<td>Core Strategies</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sage-page']/h1</td>
+	<td>Sage Advice: Educating Educators</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='sage-page']/div[2]/p[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='sage-page']/div[2]/h4[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='sage-page']/div[2]/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='sage-page']/div[2]/p[9]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sage-page']/div[2]/h4[9]</td>
+	<td>Patti Coggins</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='sage-page']/div[2]/h5[25]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='sage-page']/h4</td>
+	<td></td>
+</tr>
+<!--comments-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in to vote!</td>
+	<td>Sign in to vote!</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='comments']/div[2]/div[2]/div[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=www.movieteacher46</td>
+	<td>www.movieteacher46</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='comments']/div[2]/div[2]/div[6]/ul/li[2]/a</td>
+	<td>Comment</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Andri</td>
+	<td>Andri</td>
+</tr>
+<!--right side-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[3]/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edutopia-connect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+</tbody></table>
+</body>
+</html>

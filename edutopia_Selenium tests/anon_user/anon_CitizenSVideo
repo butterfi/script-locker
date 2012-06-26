@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_CitizenSVideo</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_CitizenSVideo</td></tr>
+</thead><tbody>
+<!--anon_CitizenSVideo verifies page /citizen-schools-getting-started-video-->
+<!--last mod: 12/7/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/citizen-schools-getting-started-video</td>
+	<td></td>
+</tr>
+<!--top ad, masthead and menu link-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Videos</td>
+	<td>Videos</td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-online</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--main content-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='article-left']/h1</td>
+	<td>Getting Started with Citizen Schools</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>article-left</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>media_control</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=video2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=click here for additional resources</td>
+	<td>click here for additional resources</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='video_body']/h2</td>
+	<td>Getting-Started Tips</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>video_body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>resources</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=U.S. Dept of Education Afterschool Training Toolkit</td>
+	<td>U.S. Dept of Education Afterschool Training Toolkit</td>
+</tr>
+<!--right side-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='mostpop-box']/h3</td>
+	<td>Most Popular Videos</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[6]/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edutopia-connect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>emn-widget</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Charles Stewart Mott Foundation.</td>
+	<td>Charles Stewart Mott Foundation.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Getting Started with Citizen Schools</td>
+	<td>Getting Started with Citizen Schools</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ndfl_localnav']/ul/li[3]/h3</td>
+	<td>Videos and Tips</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ndfl_localnav']/h2</td>
+	<td>Citizen Schools Table of Contents</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Go to A New Day for Learning, Part Two</td>
+	<td>Go to A New Day for Learning, Part Two</td>
+</tr>
+</tbody></table>
+</body>
+</html>

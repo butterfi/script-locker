@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>auth_GroupsJoinInvLeave</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">auth_GroupsJoinInvLeave</td></tr>
+</thead><tbody>
+<!--auth_GroupsJoinInvLeave verifies ability to join a group, invite friends, and leave the group-->
+<!--last mod: 12/15/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/groups/charter-schools</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Join This Group</td>
+	<td></td>
+</tr>
+<!--login-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign in</td>
+	<td></td>
+</tr>
+<!--login-->
+<tr>
+	<td>verifyText</td>
+	<td>edit-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-name</td>
+	<td>${loginName}</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-pass</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-pass</td>
+	<td>${loginPwd}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<!--Join Group-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='group-header']/div[2]/div[1]/span/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>Charter Schools | Edutopia Group Discussions by and for Educators</td>
+	<td></td>
+</tr>
+<!--Leave Group-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Leave This Group</td>
+	<td>Leave This Group</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Leave This Group</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Charter Schools | Edutopia Group Discussions by and for Educators</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='content']/div[1]</td>
+	<td>${uName} removed from Charter Schools.</td>
+</tr>
+<!--logout-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign Out</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

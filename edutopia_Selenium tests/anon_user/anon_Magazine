@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_Magazine</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_Magazine</td></tr>
+</thead><tbody>
+<!--anon_Magazine verifies page /magazine-->
+<!--last mod; 12/8/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/magazine</td>
+	<td></td>
+</tr>
+<!--header area-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Join our community</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Blogs</td>
+	<td>Blogs</td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-concepts</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--main content-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='magazine cover']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>mag_title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='magazine']/h3[1]</td>
+	<td>Up Front</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='magazine']/p[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='magazine']/h3[2]</td>
+	<td>Briefs</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='magazine']/p[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='magazine']/h3[3]</td>
+	<td>Dashboard</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='magazine']/h3[4]</td>
+	<td>Beats</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='magazine']/p[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='magazine']/h3[5]</td>
+	<td>Features</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='magazine']/h3[6]</td>
+	<td>Buzz</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='magazine']/h3[7]</td>
+	<td>Mixed Media</td>
+</tr>
+<!--right side-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edutopia-connect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[3]/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>headerfooter</td>
+	<td>Previous Issues</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Feb 2010: Social &amp; Emotional Learning issue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='Feb 2010: Social &amp; Emotional Learning']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-jump-goto</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='previous_mags']/div[2]/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

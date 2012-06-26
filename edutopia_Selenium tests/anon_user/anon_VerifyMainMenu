@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<!--anon_VerifyMainMenu checks that links exist for all menu and submenu items-->
+<!--last mod: 12/1/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>http://vm/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>K-12 Education &amp; Learning Innovations with Proven Strategies that Work | Edutopia</td>
+	<td></td>
+</tr>
+<!--Browse by Grade Level menu-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Browse by Grade Level</td>
+	<td>Browse by Grade Level</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Grades K-2</td>
+	<td>Grades K-2</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Grades 3-5</td>
+	<td>Grades 3-5</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Grades 6-8</td>
+	<td>Grades 6-8</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Grades 9-12</td>
+	<td>Grades 9-12</td>
+</tr>
+<!--Core Strategies menu-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Core Strategies</td>
+	<td>Core Strategies</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Overview</td>
+	<td>Overview</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Comprehensive Assessment</td>
+	<td>Comprehensive Assessment</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Integrated Studies</td>
+	<td>Integrated Studies</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Project-Based Learning</td>
+	<td>Project-Based Learning</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Social and Emotional Learning</td>
+	<td>Social and Emotional Learning</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Teacher Development</td>
+	<td>Teacher Development</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Technology Integration</td>
+	<td>Technology Integration</td>
+</tr>
+<!--Video menu-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Videos</td>
+	<td>Videos</td>
+</tr>
+<!--Blogs menu-->
+<!---- how dynamic is this?-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Blogs</td>
+	<td>Blogs</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=View Recent Blog Posts</td>
+	<td>View Recent Blog Posts</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Charter Schools - Bob Lenz</td>
+	<td>Charter Schools - Bob Lenz</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Community - Betty Ray</td>
+	<td>Community - Betty Ray</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Education Innovation - Milton Chen</td>
+	<td>Education Innovation - Milton Chen</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Elementary Education - Gaetan Pappalardo</td>
+	<td>Elementary Education - Gaetan Pappalardo</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=High School Composition - Todd Finley</td>
+	<td>High School Composition - Todd Finley</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Middle School - Heather Wolpert-Gawron</td>
+	<td>Middle School - Heather Wolpert-Gawron</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Professional Development - Elena Aguilar</td>
+	<td>Professional Development - Elena Aguilar</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Project-Based Learning - Suzie Boss</td>
+	<td>Project-Based Learning - Suzie Boss</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=School Reform - Anne O'Brien</td>
+	<td>School Reform - Anne O'Brien</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Social and Emotional Learning - Maurice Elias</td>
+	<td>Social and Emotional Learning - Maurice Elias</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=STEM Education - Eric Brunsell</td>
+	<td>STEM Education - Eric Brunsell</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Student Engagement - Rebecca Alber</td>
+	<td>Student Engagement - Rebecca Alber</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Student Engagement - Ben Johnson</td>
+	<td>Student Engagement - Ben Johnson</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Tech Integration, Elementary - Mary Beth Hertz</td>
+	<td>Tech Integration, Elementary - Mary Beth Hertz</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Tech Integration, High School - Andrew Marcinek</td>
+	<td>Tech Integration, High School - Andrew Marcinek</td>
+</tr>
+<!--Community menu-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Community</td>
+	<td>Community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=View All Groups</td>
+	<td>View All Groups</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Administrators</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Administrators</td>
+	<td>Administrators</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Art/Music/Drama</td>
+	<td>Art/Music/Drama</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Assessment</td>
+	<td>Assessment</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Classroom Management</td>
+	<td>Classroom Management</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Elementary School</td>
+	<td>Elementary School</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Middle School</td>
+	<td>Middle School</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=New Teachers</td>
+	<td>New Teachers</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Online Learning</td>
+	<td>Online Learning</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Project-Based Learning</td>
+	<td>Project-Based Learning</td>
+</tr>
+<!--//li[@id='menu-27805']/a-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Social Emotional Learning</td>
+	<td>Social Emotional Learning</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Special Ed</td>
+	<td>Special Ed</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=STEM Education</td>
+	<td>STEM Education</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=News and Opinion - Edutopia</td>
+	<td>News and Opinion - Edutopia</td>
+</tr>
+<!--Schools That Work menu-->
+<!---- how dynamic is this?-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Schools That Work</td>
+	<td>Schools That Work</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Career Tech &amp; College Prep in CA (9-12)</td>
+	<td>Career Tech &amp; College Prep in CA (9-12)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=College-Bound Culture in TX (6-12)</td>
+	<td>College-Bound Culture in TX (6-12)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Differentiated Instruction in SC (K-5)</td>
+	<td>Differentiated Instruction in SC (K-5)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Online Learning (6-12)</td>
+	<td>Online Learning (6-12)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Project Learning in ME (6-12)</td>
+	<td>Project Learning in ME (6-12)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Social &amp; Emotional Learning in KY (K-8)</td>
+	<td>Social &amp; Emotional Learning in KY (K-8)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=SEL After School in SC (K-6)</td>
+	<td>SEL After School in SC (K-6)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=About Schools That Work</td>
+	<td>About Schools That Work</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Support Edutopia</td>
+	<td>Support Edutopia</td>
+</tr>
+</tbody></table>
+</body>
+</html>

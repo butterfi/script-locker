@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_HomePage</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_HomePage</td></tr>
+</thead><tbody>
+<!--anon_Homepage validates elements on homepage for anonymous user are present-->
+<!--last mod: 12/2/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<!--masthead and a menu element-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Browse by Grade Level</td>
+	<td></td>
+</tr>
+<!--footer and copybar present-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Latest Blog Posts</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=See all Blog Posts</td>
+	<td>See all Blog Posts</td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Video of the Week</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='homepage-video']/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Groups: Join the Conversation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Education News, Opinions, and Classroom Freebies</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Schools That Work</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>K-12 Education &amp; Learning Innovations with Proven Strategies that Work | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--newsletter widget-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='emn-widget']/div/p</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

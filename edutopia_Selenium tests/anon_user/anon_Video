@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_Video</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_Video</td></tr>
+</thead><tbody>
+<!--anon_Video verifies page /video-->
+<!--last mod: 12/2/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/video</td>
+	<td></td>
+</tr>
+<!--masthead, top ad, menu link and footer-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Education Video Library | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Videos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--main content -->
+<!--video carousel-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='content']/div[1]/div/div[1]/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>views_slideshow_jcarouselthumbs_next_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>views_slideshow_jcarouselthumbs_prev_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>views_slideshow_jcarouselthumbs_next_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>views_slideshow_jcarouselthumbs_prev_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='views_slideshow_jcarouselthumbs_div_1_1']/div[2]/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='content']/div[1]/div/div[1]/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//form[@id='views-exposed-form-video-gallery-page-1']/div/div/div/div[1]</td>
+	<td></td>
+</tr>
+<!--search-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-keys</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-tid-2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>edit-tid-2</td>
+	<td>label=Social &amp; Emotional Learning</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-tid-1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>edit-tid-2</td>
+	<td>&lt;Any&gt;Comprehensive AssessmentIntegrated StudiesProject-Based LearningSocial &amp; Emotional LearningTeacher DevelopmentTechnology Integration</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>edit-tid-1</td>
+	<td>&lt;Any&gt;Primary/K-2Upper elementary/3-5Middle/6-8High/9-12Education Culture</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>edit-tid-1</td>
+	<td>label=Middle/6-8</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-submit-video-gallery</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='video-left']/div[2]/ul/li[1]</td>
+	<td></td>
+</tr>
+<!--paging-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=next ›</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=last »</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='video-left']/div[3]/div[1]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='video-left']/div[3]/div[2]/div/div/div/div[2]/h2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='video-left']/div[4]/ul/li[11]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='video-left']/div[4]/ul/li[12]/a</td>
+	<td></td>
+</tr>
+<!--right side-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='mostpop-box']/h3</td>
+	<td>Most Popular Videos</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='video-right']/div[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[3]/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edutopia-connect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

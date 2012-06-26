@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_CitizenSStyles</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_CitizenSStyles</td></tr>
+</thead><tbody>
+<!--anon_CitizenSStyles verifies page /citizen-schools-lesson-learning-styles-->
+<!--last mod: 12/7/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/citizen-schools-lesson-learning-styles</td>
+	<td></td>
+</tr>
+<!--top ad, masthead, menu link-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Core Strategies</td>
+	<td>Core Strategies</td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-found</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--main content-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Curriculum by Citizen Schools Staff</td>
+	<td>Curriculum by Citizen Schools Staff</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Print</td>
+	<td>Print</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Download Lesson 2</td>
+	<td>Download Lesson 2</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=experiential-learning cycle</td>
+	<td>experiential-learning cycle</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/h2[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/h3[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/p[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/ul/li[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/div[3]/table/thead/tr/td[1]/h2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/div[3]/table/tbody/tr[2]/td[2]/p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='article-left']/h4[2]</td>
+	<td>This article originally published on 9/24/2008</td>
+</tr>
+<!--page browsing-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/div[4]/div[1]/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/div[4]/div[2]/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Previous page:</td>
+	<td>Previous page:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Next page:</td>
+	<td>Next page:</td>
+</tr>
+<!--comments-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Sign in to vote!</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Comment</td>
+	<td>Comment</td>
+</tr>
+<!--right side-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edutopia-connect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='emn-widget']/div/p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='blogpost']/h3</td>
+	<td>Latest Blog Posts</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Charles Stewart Mott Foundation.</td>
+	<td>Charles Stewart Mott Foundation.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Creating Lessons for Different Learning Styles</td>
+	<td>Creating Lessons for Different Learning Styles</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ndfl_localnav']/ul/li[2]/h3</td>
+	<td>Lessons</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ndfl_localnav']/h2</td>
+	<td>Citizen Schools Table of Contents</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Go to A New Day for Learning, Part Two</td>
+	<td>Go to A New Day for Learning, Part Two</td>
+</tr>
+</tbody></table>
+</body>
+</html>

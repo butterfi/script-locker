@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>PasaIntro</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PasaIntro</td></tr>
+</thead><tbody>
+<!--anon_PasaIntro checks for elements on http://vm/pasa-after-school-program-introduction-->
+<!--last mod: 12/1/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/pasa-after-school-program-introduction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>exact:PASA: Connecting Middle School Youth to a Community-Built System of After-School Programs | Edutopia</td>
+	<td></td>
+</tr>
+<!--author-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Jenny Parma</td>
+	<td>Jenny Parma</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Edutopia Staff</td>
+	<td>Edutopia Staff</td>
+</tr>
+<!--share links-->
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Comments</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Comment RSS</td>
+	<td>Comment RSS</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=Print</td>
+	<td>Print</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=lessons</td>
+	<td>lessons</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=videos and tips</td>
+	<td>videos and tips</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=articles</td>
+	<td>articles</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=contacts</td>
+	<td>contacts</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=eight lessons and supplementary materials</td>
+	<td>eight lessons and supplementary materials</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=AfterZones</td>
+	<td>AfterZones</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Read more</td>
+	<td>Read more</td>
+</tr>
+<!--background info text-->
+<tr>
+	<td>verifyTextPresent</td>
+	<td>This material, provided by PASA, is funded in part by a generous grant from the Charles Stewart Mott Foundation.</td>
+	<td></td>
+</tr>
+<!--right side-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Go to A New Day for Learning, Part Two</td>
+	<td>Go to A New Day for Learning, Part Two</td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>PASA Table of Contents</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='ndfl_localnav']/ul/li[1]/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ndfl_localnav']/ul/li[2]/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ndfl_localnav']/ul/li[2]/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='ndfl_localnav']/ul/li[2]/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ndfl_localnav']/ul/li[2]/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=exact:Overview: PASA Lessons at a Glance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Videos and Tips</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Support for coverage of learning beyond the classroom is provided in part by the Charles Stewart Mott Foundation.</td>
+	<td></td>
+</tr>
+<!--boxes-->
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Most Popular</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Most Popular Videos</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

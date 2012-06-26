@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>auth_ProfileEdit</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">auth_ProfileEdit2</td></tr>
+</thead><tbody>
+<!--auth_ProfileEdit2 verifies ability of user to edit their profile. Not all fields tested here.-->
+<!--note this uses a username w/ UID which generates different messages.-->
+<!--last mod: 12/15/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<!--login-->
+<!--workaround for selenium bug w/ _blank targets - open target directly vs. via popup or lightbox-->
+<tr>
+	<td>storeAttribute</td>
+	<td>//a[@class='lightbox-processed']/@href</td>
+	<td>href</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${href}</td>
+	<td></td>
+</tr>
+<!--end workaround-->
+<!--login-->
+<tr>
+	<td>verifyText</td>
+	<td>edit-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-name</td>
+	<td>${loginName2}</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-pass</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-pass</td>
+	<td>${loginPwd}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${uName2}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>My account | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Edit Your Profile</td>
+	<td>Edit Your Profile</td>
+</tr>
+<!--Edit the profile-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit Your Profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>${uName2} | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>My Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Profile</td>
+	<td>Profile</td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Personal Profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-field-short-summary-0-value</td>
+	<td>test summary</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>edit-field-profile-picture-0-upload</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-field-profile-summary-0-value</td>
+	<td>about me</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-field-profile-interests-0-value</td>
+	<td>interest, interest2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-field-profile-city-0-value</td>
+	<td>here</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-field-profile-state-value</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-field-profile-country-value</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-field-profile-role-value</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>edit-field-profile-teacher-title-value-oth</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>edit-field-profile-grade-value-College/University</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>edit-field-profile-subject-value-math</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-field-eduyears-0-value</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-field-profile-orgs-0-value</td>
+	<td>ha</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>edit-field-profile-blog-0-url</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='edit-field-profile-facebook-0-url-wrapper']/span</td>
+	<td></td>
+</tr>
+<!--submit changes-->
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>${uName2} | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Your profile has been updated. View your public profile.</td>
+	<td></td>
+</tr>
+<!--check changes-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=View your public profile.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>My account | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>test summary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>about me</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>about me<br /> <br /> <br />Areas of Interests:<br /> interest, interest2 <br />Organizations / Affiliations:<br /> ha</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Grade: College/University</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Subject: math</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Years in Education: 0</td>
+	<td></td>
+</tr>
+<!--clear all mods-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit Your Profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>${uName2} | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-field-profile-summary-0-value</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-field-short-summary-0-value</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-field-profile-interests-0-value</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-field-profile-city-0-value</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>edit-field-profile-teacher-title-value-oth</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>edit-field-profile-grade-value-College/University</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>edit-field-profile-subject-value-math</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-field-eduyears-0-value</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-field-profile-orgs-0-value</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>${uName2} | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=View your public profile.</td>
+	<td></td>
+</tr>
+<!--verify clearing data worked-->
+<tr>
+	<td>assertTitle</td>
+	<td>My account | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>test summary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>about me</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>about me<br /> <br /> <br />Areas of Interests:<br /> interest, interest2 <br />Organizations / Affiliations:<br /> ha</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>exact:Grade: College/University</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>exact:Subject: math</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>Years in Education: 0</td>
+	<td></td>
+</tr>
+<!--logout-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign Out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>K-12 Education &amp; Learning Innovations with Proven Strategies that Work | Edutopia</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

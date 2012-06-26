@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_Groups</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_Groups</td></tr>
+</thead><tbody>
+<!--anon_Groups verifies page /groups-->
+<!--last mod: 12/6/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/groups</td>
+	<td></td>
+</tr>
+<!--top ad, masthead and menu link-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Community</td>
+	<td>Community</td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-concepts</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--main content-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='groups-landing']/div[1]/div/div[1]/div[2]/div/div/h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Principles</td>
+	<td>Principles</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Guidelines</td>
+	<td>Guidelines</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=next ›</td>
+	<td>next ›</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=last »</td>
+	<td>last »</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='groups-landing']/div[1]/div/div[3]/div/div/div[2]/table/thead/tr/th[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Group Name</td>
+	<td>Group Name</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Most Recent Activity</td>
+	<td>Most Recent Activity</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>groups-landing</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join This Group</td>
+	<td>Join This Group</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Most Recent</td>
+	<td>Most Recent</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Betty Ray</td>
+	<td>Betty Ray</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='groups-landing']/div[1]/div/div[3]/div/div/div[3]/ul/li[3]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Groups | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=‹ previous</td>
+	<td>‹ previous</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=« first</td>
+	<td>« first</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='groups-landing']/div[1]/div/div[3]/div/div/div[2]/table/tbody/tr[1]/td[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Join This Group</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=« first</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Groups | Edutopia</td>
+	<td></td>
+</tr>
+<!--right side-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='groups-landing']/div[2]/div/div[7]/h2</td>
+	<td>Most Active Members</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[5]/div/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='groups-landing']/div[2]/div/div[3]/h2</td>
+	<td>Most Recent Activity</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

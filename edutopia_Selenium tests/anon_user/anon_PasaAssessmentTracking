@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>PasaAssessmentTracking</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PasaAssessmentTracking</td></tr>
+</thead><tbody>
+<!--anon_PasaAssessmentTracking validates page http://vm/pasa-lesson-assessment-tracking-->
+<!--last mod: 12/1/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/pasa-lesson-assessment-tracking</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Lesson 4: Student Assessment and Tracking</td>
+	<td></td>
+</tr>
+<!--author-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Jenny Parma</td>
+	<td>Jenny Parma</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Tutorial provided by Patrick Duhon and Elizabeth Devaney</td>
+	<td>Tutorial provided by Patrick Duhon and Elizabeth Devaney</td>
+</tr>
+<!--share links-->
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Comments</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Comment RSS</td>
+	<td>Comment RSS</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Print</td>
+	<td>Print</td>
+</tr>
+<!--//-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Download Lesson 4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=previous lesson</td>
+	<td>previous lesson</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Lesson 3</td>
+	<td>Lesson 3</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=High/Scope Education Foundation</td>
+	<td>High/Scope Education Foundation</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Click to download a summary of the Rhode Island Program Quality Assessment Tool (RIPQA)</td>
+	<td>Click to download a summary of the Rhode Island Program Quality Assessment Tool (RIPQA)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=YouthServices.net</td>
+	<td>YouthServices.net</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Cityspan Technologies</td>
+	<td>Cityspan Technologies</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Click to download a sample data-tracking report from YouthServices.net</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=professional development</td>
+	<td>professional development</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Advancing Youth Development</td>
+	<td>Advancing Youth Development</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Vocabulary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Key Points</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Previous page:</td>
+	<td>Previous page:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Next page:</td>
+	<td>Next page:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Go to A New Day for Learning, Part Two</td>
+	<td>Go to A New Day for Learning, Part Two</td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>PASA Table of Contents</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Student Assessment and Tracking</td>
+	<td>Student Assessment and Tracking</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Charles Stewart Mott Foundation</td>
+	<td>Charles Stewart Mott Foundation</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=See all Blog Posts</td>
+	<td>See all Blog Posts</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>emn-widget</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Most Popular</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Most Popular Videos</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

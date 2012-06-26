@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/groups" />
+<title>anon_ProjectBasedLearning</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_ProjectBasedLearning</td></tr>
+</thead><tbody>
+<!--anon_ProjectBasedLearning verifies page /project-based-learning-->
+<tr>
+	<td>open</td>
+	<td>/project-based-learning</td>
+	<td></td>
+</tr>
+<!--top ad, masthead, footer and a menu item-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Core Strategies</td>
+	<td>Core Strategies</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<!--body-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='topic-overview']/h1[1]</td>
+	<td>Core Strategy: Project-Based Learning</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>topic-video-box</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='topic-shell']/h2</td>
+	<td>Real-Life Examples</td>
+</tr>
+<!--video slider-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Previous</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Previous</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='keyword-cloud']/h2</td>
+	<td>Three Ways to Learn More About Project-Based Learning</td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Explore through editors' keywords:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-keys</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-submit-big-list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='keyword-right']/h3</td>
+	<td>Instructional Module</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[5]/p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[4]/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[4]/h3</td>
+	<td>Recent Comments About This Topic</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='mostpop-box']/h3</td>
+	<td>Most Popular Articles On This Topic</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='keyword-right']/div[1]/div[1]</td>
+	<td>JOIN THE GROUP: Project-Based Learning</td>
+</tr>
+</tbody></table>
+</body>
+</html>

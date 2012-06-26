@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>auth_RunFirst</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">auth_RunFirst</td></tr>
+</thead><tbody>
+<!--auth_RunFirst sets up misc. global variables used in this test suite.-->
+<!--modify username, etc. here-->
+<!--last mod: 12/15/10 - LB-->
+<!--username to be used in this test-->
+<tr>
+	<td>store</td>
+	<td>TestUser</td>
+	<td>uName</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>TestUser2 - 26206</td>
+	<td>uName2</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>geoff@coconutmoon.com</td>
+	<td>loginName</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>test2@asdflkj.tv</td>
+	<td>loginName2</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>tacoshop</td>
+	<td>loginPwd</td>
+</tr>
+</tbody></table>
+</body>
+</html>

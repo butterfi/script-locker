@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_Groups_UserHWG</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_Groups_UserHWG</td></tr>
+</thead><tbody>
+<!--anon_Groups_UserHWG verifies page /user/94-->
+<!--last mod: 12/6/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/user/94</td>
+	<td></td>
+</tr>
+<!--top ad, masthead, menu link-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Community</td>
+	<td>Community</td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-online</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--left side-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Heather Wolpert-Gawron</td>
+	<td>Heather Wolpert-Gawron</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='content']/div[1]/div/div[1]/div/div/div/div/div[2]/div[4]/span</td>
+	<td>exact:Grade:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=tweenteacher</td>
+	<td>tweenteacher</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Blog</td>
+	<td>Blog</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Twitter</td>
+	<td>Twitter</td>
+</tr>
+<!--main content-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='content']/div[1]/div/div[2]/div/div[1]/div/div</td>
+	<td>Heather Wolpert-Gawron<br />Middle School teacher by day, Tweenteacher by night</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=www.tweenteacher.com</td>
+	<td>www.tweenteacher.com</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='content']/div[1]/div/div[2]/div/div[3]/div/div/div[2]</td>
+	<td>Organizations / Affiliations:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='content']/div[1]/div/div[2]/div/div[3]/div/div/div[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='content']/div[1]/div/div[2]/div/div[3]/div/div/a[1]</td>
+	<td>Administrators</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

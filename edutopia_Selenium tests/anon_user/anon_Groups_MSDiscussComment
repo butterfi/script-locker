@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_Groups_MSDiscussComment</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_Groups_MSDiscussComment</td></tr>
+</thead><tbody>
+<!--anon_Groups_MSDiscussComment verifies specific comment at /groups/middle-school/20929#comment-78338-->
+<!--last mod: 12/6/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/groups/middle-school/20929</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='group-discussion']/div[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[contains(@src,'http://vm/files/imagecache/profile_picture_list/profile_pictures/n689321225_2016173_6882863.jpg')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='Edutopia Staff']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Elana Leoni</td>
+	<td>Elana Leoni</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='group-discussion']/div[3]/div/div[4]/div/div[3]/div/div[3]/div[2]/div[1]/div/span[2]/a</td>
+	<td>Sign in to vote!</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>vote_up_78338</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='group-discussion']/div[3]/div/div[4]/div/div[3]/div/div[3]/div[2]/div[4]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Favorite Teacher Quotes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='group-discussion']/div[3]/div/div[4]/div/div[3]/div/div[3]/div[2]/div[5]/div/p[2]</td>
+	<td>1. &quot;He who opens a school door, closes a prison.&quot; --Victor Hugo</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='group-discussion']/div[3]/div/div[4]/div/div[3]/div/div[3]/div[2]/div[6]/ul/li[2]/a</td>
+	<td>Comment</td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>exact:Favorite Teaching/Learning Quote of all Time? | Edutopia Group Discussions by and for Educators</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>VerifyHomePage</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">VerifyHomePage</td></tr>
+</thead><tbody>
+<!--anon_VerifyHomePage verifies the home page-->
+<!--last mod: 12/2/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<!--masthead, header and footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Browse by Grade Level</td>
+	<td>Browse by Grade Level</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-concepts</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<!--check main content area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=homepage-video</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Latest Blog Posts</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=See all Blog Posts</td>
+	<td>See all Blog Posts</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='home_left']/h3[1]</td>
+	<td>Video of the Week</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Watch the Video</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='home_left']/h3[2]</td>
+	<td>exact:Groups: Join the Conversation</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='home_left']/h3[3]</td>
+	<td>Education News, Opinions, and Classroom Freebies</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='poll-homeblock']/h4[1]</td>
+	<td>exact:What do you think?</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>poll-homeblock</td>
+	<td></td>
+</tr>
+<!--newsletter widget-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='emn-widget']/div/p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[4]/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edutopia-connect</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

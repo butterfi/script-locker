@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_Groups_ElemSchool</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_Groups_ElemSchool</td></tr>
+</thead><tbody>
+<!--anon_Groups_ElemSchool verifies page /groups/elementary-school-->
+<!--last mod: 12/6/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/groups/elementary-school</td>
+	<td></td>
+</tr>
+<!--top ad, masthead, menu link-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Sign in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Join our community</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Community</td>
+	<td>Community</td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-online</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--intro area-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='group-header']/h2</td>
+	<td>Groups » Elementary School » Discussions</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='group-header']/div[2]/div[1]/span/a</td>
+	<td>Join This Group</td>
+</tr>
+<!--left side-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='content']/div[1]/div/div[2]/div/div[1]/div/div/div[2]</td>
+	<td>Elementary School</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Join This Group</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Gaetan Pappalardo</td>
+	<td>Gaetan Pappalardo</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='content']/div[1]/div/div[2]/div/div[5]/h2</td>
+	<td>Most Active Group Members</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[7]/div/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<!--main content - Discussions-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='group-tabs']/div/div/ul/li[1]/a/span</td>
+	<td>Discussions</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Start a New Discussion</td>
+	<td>Start a New Discussion</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Most recent</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-search</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-submit-inceptum-discussions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=last »</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=last »</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Elementary School | Edutopia Group Discussions by and for Educators</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=‹ previous</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=« first</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=« first</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Elementary School | Edutopia Group Discussions by and for Educators</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='group-tabs']/div/div/ul/li[2]/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Edutopia</td>
+	<td></td>
+</tr>
+<!--Members tab-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='group-tabs']/div/div/ul/li[2]/a/span</td>
+	<td>Members</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='content']/div[1]/div/div[3]/div/div[2]/div/div[3]/h2</td>
+	<td>Members</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=next ›</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

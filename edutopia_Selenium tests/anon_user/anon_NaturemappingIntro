@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_NaturemappingIntro</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_NaturemappingIntro</td></tr>
+</thead><tbody>
+<!--anon_NaturemappingIntro verifies page /naturemapping-introduction-->
+<!--last mod: 12/7/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/naturemapping-introduction</td>
+	<td></td>
+</tr>
+<!--header area-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Schools That Work</td>
+	<td>Schools That Work</td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-concepts</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--main content-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='article-left']/h1</td>
+	<td>exact:NatureMapping: Molding Young Scientists During the School Day</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/div[1]/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//a[contains(text(),'Curriculum by Diane Petersen and&nbsp;&nbsp;Karen Dvornich')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/p[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=videos and tips</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='Toad with tracker strapped on its back.']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/h3[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='article-left']/h4[2]</td>
+	<td>This article originally published on 1/20/2009</td>
+</tr>
+<!--comments-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Sign in to vote!</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Comment</td>
+	<td>Comment</td>
+</tr>
+<!--right side-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[7]/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edutopia-connect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='emn-widget']/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='blogpost']/h3</td>
+	<td>Latest Blog Posts</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Charles Stewart Mott Foundation.</td>
+	<td>Charles Stewart Mott Foundation.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Molding Young Scientists During the School Day</td>
+	<td>Molding Young Scientists During the School Day</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='NatureMapping: Young students learn science through field studies. Best for K-8 teachers, especially science teachers.']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Go to A New Day for Learning, Part Two</td>
+	<td>Go to A New Day for Learning, Part Two</td>
+</tr>
+</tbody></table>
+</body>
+</html>

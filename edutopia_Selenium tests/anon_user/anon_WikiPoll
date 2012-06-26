@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_WikiPoll</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_WikiPoll</td></tr>
+</thead><tbody>
+<!--anon_WikiPoll verifies page /poll-students-allowed-use-wikipedia-->
+<!--last mod: 12/8/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/poll-students-allowed-use-wikipedia</td>
+	<td></td>
+</tr>
+<!--header area-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Community</td>
+	<td>Community</td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-online</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--main content-->
+<tr>
+	<td>verifyText</td>
+	<td>link=View</td>
+	<td>View</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Results</td>
+	<td>Results</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='poll-left']/h2</td>
+	<td>The Edutopia Poll</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sara Ring</td>
+	<td>Sara Ring</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Forward</td>
+	<td>Forward</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Comment RSS</td>
+	<td>Comment RSS</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Just Say No to Wikipedia</td>
+	<td>Just Say No to Wikipedia</td>
+</tr>
+<!--poll-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='poll-left']/p[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='poll-left']/h1</td>
+	<td>exact:Should students be allowed to use Wikipedia as a source?</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-choice-0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-choice-1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-choice-2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-choice-3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-vote</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='edit-choice-2-wrapper']/label</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//form[@id='poll-view-voting']/div/div/div</td>
+	<td></td>
+</tr>
+<!--comments-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='comments']/h1</td>
+	<td>Comments</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='comments']/div[1]/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in to vote!</td>
+	<td>Sign in to vote!</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='comments']/div[1]/div[2]/div[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='comments']/div[1]/div[2]/h3</td>
+	<td>Wikipedia and the Oxford Dictionary</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Comment</td>
+	<td>Comment</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Comment with Quote</td>
+	<td>Comment with Quote</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=next ›</td>
+	<td>next ›</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=last »</td>
+	<td>last »</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=6</td>
+	<td>6</td>
+</tr>
+<!--right side-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[4]/h3</td>
+	<td>Most Popular Videos</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='mostpop-box']/h3</td>
+	<td>Most Popular</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='poll-localnav']/h4</td>
+	<td>Related Links</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

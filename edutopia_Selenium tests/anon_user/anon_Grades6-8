@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_Grades6-8</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_Grades6-8</td></tr>
+</thead><tbody>
+<!--anon_Grades6-8 verifies page /grade-level-6-8-->
+<!--last mod: 12/2/10-->
+<tr>
+	<td>open</td>
+	<td>/grade-level-6-8</td>
+	<td></td>
+</tr>
+<!--masthead, menu link and footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Browse by Grade Level</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--header-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>content-header</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>6th, 7th, and 8th Grades</td>
+	<td></td>
+</tr>
+<!--newsletter widget-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='emn-widget']/div/p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Advertisement</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Our Latest<br />Blog Posts</td>
+	<td></td>
+</tr>
+<!--video-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>media-shell</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='glp-right']/div[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join Now!</td>
+	<td>Join Now!</td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Featured Member</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='content-middle']/div[4]/div[1]/p</td>
+	<td>Recent Discussions</td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Core Strategies for Grades 6-8</td>
+	<td></td>
+</tr>
+<!--comment link-->
+<tr>
+	<td>verifyAttribute</td>
+	<td>//div[@id='content-middle']/div[4]/div[2]/div/div[6]/span/a@href</td>
+	<td>*#comments</td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_CoreConcepts</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_CoreConcepts</td></tr>
+</thead><tbody>
+<!--anon_CoreConcepts verifies items on page /core-concepts-->
+<!--last mod: 12/2/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/core-concepts</td>
+	<td></td>
+</tr>
+<!--masthead, header and footer areas-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Core Strategies</td>
+	<td>Core Strategies</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-concepts</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Core Strategies for Innovation and Reform in Learning</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>cc_h2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='topic_overview_desc']/p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='topic_overview_intro']/p/i</td>
+	<td>Edutopia</td>
+</tr>
+<!--link in text-->
+<tr>
+	<td>verifyText</td>
+	<td>link=About Us</td>
+	<td>About Us</td>
+</tr>
+<!--presence of image map-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>core_map</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>sel_map</td>
+	<td>Social &amp; Emotional Learning</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>project_map</td>
+	<td>Project Learning</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>integrated_map</td>
+	<td>Integrated Studies</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>assess_map</td>
+	<td>Comprehensive Assessment</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>td_map</td>
+	<td>Teacher Development</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>ti_map</td>
+	<td>Technology Integration</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>core_map</td>
+	<td>Core Concepts</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

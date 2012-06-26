@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>auth_MessageUser</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">auth_MessageUser</td></tr>
+</thead><tbody>
+<!--auth_MessageUser verifies user can message another-->
+<!--last mod: 12/15/10 - LB-->
+<!--NOTE: there may be an intermittent, hard to repro caching issue here where deleting second message points to wrong location and fails-->
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<!--login-->
+<!--workaround for selenium bug w/ _blank targets - open target directly vs. via popup or lightbox-->
+<tr>
+	<td>storeAttribute</td>
+	<td>//a[@class='lightbox-processed']/@href</td>
+	<td>href</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${href}</td>
+	<td></td>
+</tr>
+<!--end workaround-->
+<!--login-->
+<tr>
+	<td>verifyText</td>
+	<td>edit-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-name</td>
+	<td>${loginName}</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-pass</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-pass</td>
+	<td>${loginPwd}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>My Account</td>
+	<td></td>
+</tr>
+<!--go to a user profile page-->
+<tr>
+	<td>open</td>
+	<td>/user/26206</td>
+	<td></td>
+</tr>
+<!--send a message-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Send a Message</td>
+	<td>Send a Message</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Send a Message</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-subject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-subject</td>
+	<td>hello</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-body</td>
+	<td>how are you</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-cancel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@id='edit-submit' and @name='op' and @value='Send message']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>${uName2} | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>${uName} | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Messages</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>My account | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=hello</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=${uName2}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=hello</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>hello | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${uName}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Delete message</td>
+	<td>Delete message</td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>how are you</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Send a Message</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-body</td>
+	<td>where is this going?</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>hello | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${uName}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:where is this going?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Delete message</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[3]/ul/li/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Are you sure you want to delete | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Messages | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=hello</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>hello | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Delete message</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Are you sure you want to delete | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>This action cannot be undone. Cancel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Cancel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>hello | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Delete message</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Are you sure you want to delete | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Messages | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>You do not have any messages.<br /><br />As you participate in the Edutopia community, you can send messages to other members by clicking on their profile and using the Send Message button. <br />Change your private message e-mail notification setting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign Out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>K-12 Education &amp; Learning Innovations with Proven Strategies that Work | Edutopia</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

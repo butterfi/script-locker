@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>auth_CommentMedia</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">auth_CommentMedia</td></tr>
+</thead><tbody>
+<!--auth_CommentMedia verifies ability to comment on media such as a video-->
+<!--last mod: 12/15/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/museum-slide-show</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>The California Academy of Sciences in Pictures</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=regexp:Comments\([0-9]+\)</td>
+	<td>regexp:Comments\([0-9]+\)</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>article-left</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>video_object</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<!--login-->
+<tr>
+	<td>verifyText</td>
+	<td>edit-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-name</td>
+	<td>${loginName}</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-pass</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-pass</td>
+	<td>${loginPwd}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=regexp:Comments\([0-9]+\)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='comments']/h1</td>
+	<td>Comments</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//form[@id='comment-form']/div/div/div[2]/h2</td>
+	<td>Post a comment</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-subject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-comment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-comment</td>
+	<td>test &lt;strong&gt;media&lt;/strong&gt; comment</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>edit-subscriptions-options-1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Allowed HTML</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>The California Academy of Sciences in Pictures | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='comments']/div[1]/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>test media comment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Flag as abuse</td>
+	<td>Flag as abuse</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Post a comment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign Out</td>
+	<td>Sign Out</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign Out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>K-12 Education &amp; Learning Innovations with Proven Strategies that Work | Edutopia</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

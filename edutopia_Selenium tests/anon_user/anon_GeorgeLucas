@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_GeorgeLucas</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_GeorgeLucas</td></tr>
+</thead><tbody>
+<!--anon_GeorgeLucas verifies page /word-from-george-lucas-edutopias-role-in-education-->
+<!--last mod: 12/8/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/word-from-george-lucas-edutopias-role-in-education</td>
+	<td></td>
+</tr>
+<!--header area-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Core Strategies</td>
+	<td>Core Strategies</td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-online</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--main content-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='foundation']/h1</td>
+	<td>A Word from George Lucas: Edutopia's Role in Education</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foundation']/h2[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foundation']/p[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='George Lucas']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foundation']/div/h2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foundation']/div/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=feedback@edutopia.org</td>
+	<td>feedback@edutopia.org</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='foundation']/h2[2]</td>
+	<td>Other Commentary</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='foundation']/h3[3]</td>
+	<td>Articles</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Mr. Lucas Goes to Washington: Edutopia's Founder Advocates Telecom Access For All</td>
+	<td>Mr. Lucas Goes to Washington: Edutopia's Founder Advocates Telecom Access For All</td>
+</tr>
+<!--right side-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[4]/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edutopia-connect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='foundation-nav']/h3</td>
+	<td>Foundation</td>
+</tr>
+</tbody></table>
+</body>
+</html>

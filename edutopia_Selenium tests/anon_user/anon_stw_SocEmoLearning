@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_stw_SocEmoLearning</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_stw_SocEmoLearning</td></tr>
+</thead><tbody>
+<!--anon_stw_SocEmoLearning verifies page /stw-jefferson-->
+<!--last mod: 12/6/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/stw-jefferson</td>
+	<td></td>
+</tr>
+<!--top ad, masthead, menu link-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Sign in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Join our community</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Schools That Work</td>
+	<td></td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-online</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--main content-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='Schools That Work: Louisville social and emotional learning head']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='stw_landing_introtext']/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='stw_landing_videosidebar']/h1</td>
+	<td>Featured Strategy</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>stw_landing_videoplayer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>stw_landing_buttons</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>stw_landing_joinget</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='stw_landing_stakeholders']/h1</td>
+	<td>Meet the People at Jefferson County</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='audio symbol']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='stw_landing_stakeholders']/table/tbody/tr/td[1]/div/p[2]/b</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='stw_landing_abouttext']/h1</td>
+	<td>About Schools That Work</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Charles Stewart Mott Foundation</td>
+	<td></td>
+</tr>
+<!--right side-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[4]/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edutopia-connect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='stw_louisville']/ul/li[3]/h3</td>
+	<td>How YOU Can Do It</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='stw_louisville']/ul/li[2]/h3</td>
+	<td>How THEY Do It</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='stw_louisville']/ul/li[1]/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='stw_louisville']/ul/li[1]/h3</td>
+	<td>Louisville's BIG Idea</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Explore SEL in Louisville:</td>
+	<td>Explore SEL in Louisville:</td>
+</tr>
+</tbody></table>
+</body>
+</html>

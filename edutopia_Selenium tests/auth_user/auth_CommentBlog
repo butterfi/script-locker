@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://neo.edutopia.org/" />
+<title>auth_CommentLoginLogout</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">auth_CommentLoginLogout</td></tr>
+</thead><tbody>
+<!--auth_CommentBlog verifies ability to comment on blog post-->
+<!--last mod 12/15/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/blog/google-timeline</td>
+	<td></td>
+</tr>
+<!--verify not already logged in-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<!--wording that should only be present if not logged in-->
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Sign in or register to post comments</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>Post a comment</td>
+	<td></td>
+</tr>
+<!--login-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-name</td>
+	<td>${loginName}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-pass</td>
+	<td>${loginPwd}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Information Literacy | Edutopia</td>
+	<td></td>
+</tr>
+<!--verify logged in-->
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>Login or register to post comments</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Subscribe to Comments</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Post a comment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=My Account</td>
+	<td>My Account</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=My Groups</td>
+	<td>My Groups</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign Out</td>
+	<td>Sign Out</td>
+</tr>
+<!--post comment-->
+<tr>
+	<td>type</td>
+	<td>edit-subject</td>
+	<td>test comment</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-comment</td>
+	<td>wonderful</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>edit-subscriptions-options-1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Information Literacy | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>test comment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Flag as abuse</td>
+	<td></td>
+</tr>
+<!--logout-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign Out</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

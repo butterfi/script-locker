@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/groups" />
+<title>VerifyHeader</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">VerifyHeader</td></tr>
+</thead><tbody>
+<!--Last mod: 12/02/10 - LB-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='Edutopia']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='top-mast-links']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>ed-menu</td>
+	<td></td>
+</tr>
+<!--Are IDs/classes static?-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>class=menuparent menu-path-front</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Browse by Grade Level</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Browse by Grade Level</td>
+	<td>Browse by Grade Level</td>
+</tr>
+<!--anon_VerifyHeader verifies the masthead and top-level menu is present-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>class=menuparent menu-path-node-5919</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Core Strategies</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Core Strategies</td>
+	<td>Core Strategies</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>class=menu-path-video</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Videos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Videos</td>
+	<td>Videos</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>class=menuparent menu-path-blogs</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Blogs</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Blogs</td>
+	<td>Blogs</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>class=menuparent menu-path-groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Community</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Community</td>
+	<td>Community</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>class=menuparent menu-path-node-10953</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Schools That Work</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Schools That Work</td>
+	<td>Schools That Work</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>class=menu-path-https--npo.networkforgood.org-Donate-Donate.aspxnpoSubscriptionId1003542uniqueID634212083686360488</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Support Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Support Edutopia</td>
+	<td>Support Edutopia</td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>NewDayPart2</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">NewDayPart2</td></tr>
+</thead><tbody>
+<!--anon_NewDayPart2 validates page http://vm/new-day-for-learning-two-->
+<!--last mod: 12/1/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/new-day-for-learning-two</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>A New Day for Learning, Part Two:&nbsp;&nbsp;A Deeper Look into Four Full-Time-Learning Programs</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=part one</td>
+	<td>part one</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='PASA: Communities and schools form a citywide after-school system. Best for school district administrators or civic leaders.']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='Citizen Schools: Community members train and work as mentors. Best for mentors or new teachers seeking guidance.']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='NatureMapping: Young students learn about science through field studies. Best for K-8 teachers, especially science teachers.']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='Build San Francisco: Students learn real-world design and architecture skills. Best for educators in grades 8-12 teaching math or design.']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Support for coverage of learning beyond the classroom is provided in part by the Charles Stewart Mott Foundation.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Charles Stewart Mott Foundation</td>
+	<td>Charles Stewart Mott Foundation</td>
+</tr>
+</tbody></table>
+</body>
+</html>

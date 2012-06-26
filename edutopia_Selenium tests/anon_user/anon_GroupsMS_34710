@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_GroupsMS_34710</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_GroupsMS_34710</td></tr>
+</thead><tbody>
+<!--anon_GroupsMS_34710 verifies page /groups/middle-school/34710-->
+<!--last mod: 12/8/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/groups/middle-school/34710</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Tag You're It! Volunteer Program | Edutopia Group Discussions by and for Educators</td>
+	<td></td>
+</tr>
+<!--header area-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Community</td>
+	<td>Community</td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-online</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--left side-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[contains(@src,'http://vm/files/imagecache/group_image_full/teenboywitheyes.jpg')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join This Group</td>
+	<td>Join This Group</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Heather Wolpert-Gawron</td>
+	<td>Heather Wolpert-Gawron</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[contains(@src,'http://vm/files/imagecache/profile_picture_list/profile_pictures/tweenteacher_grav.jpg')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+<!--main content-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='group-header']/h2/a[2]</td>
+	<td>Middle School</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='group-header']/div[2]/div[1]/span/a</td>
+	<td>Join This Group</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='group-tabs']/div/div/ul/li[1]/a/span</td>
+	<td>Discussions</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='group-discussion']/div[3]/div/div[4]/div/div[1]/h2</td>
+	<td>Tag You're It! Volunteer Program</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=KellyAnn Bonnell</td>
+	<td>KellyAnn Bonnell</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='node-content']/div[2]/div[2]/div[4]</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_SearchStudentEngagementMedia</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_SearchStudentEngagementMedia</td></tr>
+</thead><tbody>
+<!--anon_SearchStudentEngagementMedia verifies results displayed when filter on Media node-->
+<!--last mod: 12/8/10 - LB-->
+<!--begin on page where search done on "student engagement" and filtered by "Comprehensive Assessment"-->
+<tr>
+	<td>open</td>
+	<td>/search/apachesolr_search/student%20engagement?filters=tid%3A260</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='search-right']/div[4]/h2</td>
+	<td>Filter by Type</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=regexp:Video \([0-9]+\)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>Search | Edutopia</td>
+	<td></td>
+</tr>
+<!--header area-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Blogs</td>
+	<td>Blogs</td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-online</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--search results-->
+<tr>
+	<td>verifyText</td>
+	<td>//form[@id='search-form']/div/div/label</td>
+	<td>Enter your keywords:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-keys</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='edit-apachesolr-search-retain-filters-wrapper']/label</td>
+	<td>Search within current filtered results</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=students management</td>
+	<td>students management</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='search-left']/h2</td>
+	<td>Search results</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='no-search']/dl/div[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=next ›</td>
+	<td>next ›</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=last »</td>
+	<td>last »</td>
+</tr>
+<!--right side-->
+<tr>
+	<td>verifyText</td>
+	<td>//div/div[7]/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edutopia-connect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='no-search']/dl/div[1]/em</td>
+	<td>Video</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='search-right']/div[4]/h2</td>
+	<td>Filter by Type</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='search-right']/div[4]/div/ul/li</td>
+	<td>(-) Video</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='search-right']/div[3]/h2</td>
+	<td>Filter by Level</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='search-right']/div[2]/h2</td>
+	<td>Filter by Core Concept</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='search-right']/div[1]/h2</td>
+	<td>Current Search</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='search-right']/div[1]/div/h3</td>
+	<td>regexp:^Search found [0-9]+ items$</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='search-right']/div[1]/div/ul/li[1]</td>
+	<td>(-) student engagement</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='search-right']/div[1]/div/ul/li[2]</td>
+	<td>(-) Comprehensive Assessment</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='search-right']/div[1]/div/ul/li[3]</td>
+	<td>(-) Video</td>
+</tr>
+</tbody></table>
+</body>
+</html>

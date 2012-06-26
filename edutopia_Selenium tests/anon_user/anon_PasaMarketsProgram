@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>PasaMarketsProgram</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PasaMarketsProgram</td></tr>
+</thead><tbody>
+<!--anon_PasaMarketsProgram verifies page http://vm/pasa-branding-marketing-video-->
+<!--last mod: 12/1/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/pasa-branding-marketing-video</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>How PASA Markets Its After-School Program</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Comments</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Comment RSS</td>
+	<td>Comment RSS</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>class=BrightcoveExperience</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Go to A New Day for Learning, Part Two</td>
+	<td>Go to A New Day for Learning, Part Two</td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>PASA Table of Contents</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=How PASA Markets Its After-School Program</td>
+	<td>How PASA Markets Its After-School Program</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=emn-widget</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Privacy Policy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Most Popular Videos</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

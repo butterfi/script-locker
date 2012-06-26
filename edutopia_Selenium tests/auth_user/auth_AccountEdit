@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>auth_AccountEdit</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">auth_AccountEdit</td></tr>
+</thead><tbody>
+<!--auth_AccountEdit verifies ability to edit account settings-->
+<!--last mod: 12/15/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<!--login-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>edit-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-name</td>
+	<td>${loginName}</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-pass</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-pass</td>
+	<td>${loginPwd}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<!--edit account settings-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Groups</td>
+	<td>Groups</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>My account | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Messages</td>
+	<td>Messages</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Account information</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:E-mail address: *</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>exact:Password:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Edutopia Alerts settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>ImmediatelyEvery hourTwice a dayDailyWeekly</td>
+	<td></td>
+</tr>
+<!--change notification interval-->
+<tr>
+	<td>select</td>
+	<td>edit-notifications-send-interval</td>
+	<td>label=Weekly</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Administer and Manage Subscriptions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>My account | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Administer and Manage Subscriptions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>edit-operation</td>
+	<td>ActivateDeactivateDeleteMailEdutopiaMailImmediatelyEvery hourTwice a dayDailyWeekly</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=&lt; back to My Account: Settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>My account | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>edit-notifications-send-interval</td>
+	<td>label=Weekly</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>My account | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Messages</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>My account | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Change your private message email notification setting</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Messages | Edutopia</td>
+	<td></td>
+</tr>
+<!--verify NO option was selected before changing back-->
+<tr>
+	<td>verifyChecked</td>
+	<td>edit-enable-0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>edit-enable-1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>Privatemsg e-mail notifications | Edutopia</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Settings</td>
+	<td></td>
+</tr>
+<!--verify notification interval was Weekly before changing back-->
+<tr>
+	<td>verifySelectedLabel</td>
+	<td>edit-notifications-send-interval</td>
+	<td>exact:Weekly</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>edit-notifications-send-interval</td>
+	<td>label=Immediately</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>glob:${uName}* | Edutopia</td>
+	<td></td>
+</tr>
+<!--logout-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign Out</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

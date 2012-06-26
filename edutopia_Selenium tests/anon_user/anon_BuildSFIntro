@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://vm/" />
+<title>anon_BuildSFIntro</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">anon_BuildSFIntro</td></tr>
+</thead><tbody>
+<!--anon_BuildSFIntro verifies page /build-sf-introduction-->
+<!--last mod: 12/7/10 - LB-->
+<tr>
+	<td>open</td>
+	<td>/build-sf-introduction</td>
+	<td></td>
+</tr>
+<!--header area-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ad']/div/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edmast</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in</td>
+	<td>Sign in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Join our community</td>
+	<td>Join our community</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Blogs</td>
+	<td>Blogs</td>
+</tr>
+<!--footer area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-concepts</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='foot-copybar']/h5[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>foot-content</td>
+	<td></td>
+</tr>
+<!--main content-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='article-left']/h1</td>
+	<td>Build SF: Architecting the Next Generation of Young Professionals</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/div[1]/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Curriculum by Build SF Staff</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Comment RSS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/p[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=lessons</td>
+	<td>lessons</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='article-left']/h2[1]</td>
+	<td>Who This Material Is Best For</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/div[3]/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='article-left']/h4[2]</td>
+	<td></td>
+</tr>
+<!--comments-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@id='comments']/h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Sign in to vote!</td>
+	<td>Sign in to vote!</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Comment</td>
+	<td>Comment</td>
+</tr>
+<!--right side-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[7]/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>edutopia-connect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>emn-widget</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='blogpost']/h3</td>
+	<td>Latest Blog Posts</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='box_ad']/p</td>
+	<td>Advertisement</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Charles Stewart Mott Foundation.</td>
+	<td>Charles Stewart Mott Foundation.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Architecting the Next Generation of Young Professionals</td>
+	<td>Architecting the Next Generation of Young Professionals</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//img[@alt='Build San Francisco - Students learn real-world design and architecture skills. Best for K-8 educators teaching math or design.']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Go to A New Day for Learning, Part Two</td>
+	<td>Go to A New Day for Learning, Part Two</td>
+</tr>
+</tbody></table>
+</body>
+</html>
