@@ -1,0 +1,58 @@
+#!/usr/bin/env drush
+#
+# Dan Shumaker
+#
+# Expanded from 2bits:  http://2bits.com/articles/using-apachebench-benchmarking-logged-users-automated-approach.html
+# Related: http://drupal.org/node/659974
+#
+# 
+#
+// Script to generate ab tests for logged in users using sessions
+// from the database
+
+$url = drush_shift();
+$num_curr = drush_shift();
+$num_reqs = drush_shift();
+
+//print "url = " . $url . "\n";
+//print "curr = " . $num_curr . "\n";
+//print "reqs = " . $num_reqs . "\n";
+if ($num_reqs == "") {
+    print "Usage: $prog drushsitealias url concurrency num_requests\n";
+    exit(1);
+}
+
+$result = db_query('SELECT sid FROM {sessions} WHERE uid > 1 LIMIT %d', $num_curr);
+$output_info = array();
+while($row = db_fetch_object($result)) {
+    $cookie = session_name() .'='. $row->sid;
+    $ab = "ab -t 1000 -A dev:dev1234 -r -c 1 -n " . $num_reqs . " -C " . $cookie . " " . $url ;
+    $output_info[] = run_in_background($ab);
+} 
+
+foreach($output_info as $io) {
+    while(is_process_running($io[0])) {
+        printf("running %s out to %s\n", $io[0], $io[1]);
+        ob_flush(); flush();
+        sleep(1);
+    }
+    printf("Finished %s output to %s\n", $io[0], $io[1]);
+    //$output = file_get_contents($io[1]);
+    //print $output;
+    fclose($io[1]);
+}
+
+function run_in_background($Command)
+{
+    $temp=array_search('uri', @array_flip(stream_get_meta_data($GLOBALS[mt_rand()]=tmpfile()))); 
+    $cmd = sprintf("%s > %s 2>&1 & echo $!", $Command, $temp);
+    $PID = exec($cmd);
+    printf("%s %s\n", $PID, $cmd);
+    return array($PID, $temp);
+}
+function is_process_running($PID)
+{
+    exec("ps $PID", $ProcessState);
+    return(count($ProcessState) >= 2);
+}
+

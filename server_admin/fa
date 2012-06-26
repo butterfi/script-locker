@@ -1,0 +1,293 @@
+#!/usr/bin/env python
+# Author: Dan Shumaker
+
+import re,pprint,sys,os,glob,imp, optparse
+
+class pySettingsMod:
+    def __init__(self, file=None, defaults={}, new=False):
+        self.mod =None
+        self.pp = pprint.PrettyPrinter(indent=5)
+        if not new:
+            self.load(file)
+        if type(self.mod).__name__ != 'module':
+            self.mod = imp.new_module('testing123')
+        self.setdefaults(defaults)
+        self.exclude_objects = ('__builtins__', '__doc__','__file__', '__name__')
+
+    def setdefaults(self, defaults):
+        for attr in defaults.keys():
+            if attr not in self.mod.__dict__.keys():
+                self.mod.__setattr__(attr, defaults[attr])
+
+    def load(self, file=None ):
+        found = self.importproj( file )
+        if found:
+            return found 
+        else:
+            found = glob.glob("*proj.py")
+            if found:
+                return self.importproj( found[0] )
+            else:
+                return False
+
+    def importproj(self, file ):
+        if file: 
+            module_dir, module_file = os.path.split(file)
+            module_name, module_ext = os.path.splitext(module_file)
+        else: 
+            return False
+        try:
+            try:
+                os.remove(module_dir + module_name + ".pyc")
+            except OSError, e:
+                pass
+            sys.path.insert(0, module_dir)
+            self.mod = __import__( module_name )
+            print "Using this settings file = %s" % os.path.abspath(file)
+            return True
+        except TypeError, e: 
+            print e
+            return False 
+        except ImportError, e:
+            return False
+
+    def clean(self):
+        for attr in defaults.keys():
+            self.mod.__setattr__(attr, defaults[attr])
+        self.write()
+        self.printall()
+
+    def filename(self):
+        return self.mod.__name__ + ".py"
+
+    def printall(self):
+        self.write( sys.stdout )
+
+    def write(self, stream=None):
+        if stream == None:
+            stream = open( self.filename(), "w")
+        elif type(stream).__name__ == 'str':
+            if "_proj.py" not in stream: 
+                new = stream.split('.')
+                stream = new[0] + "_proj.py"
+            print "self.filename = %s " % stream
+            stream = open( stream , "w")
+
+        self.pp._stream=stream
+        keys = self.mod.__dict__.keys()
+        keys.sort()
+        for attr in keys:
+            if attr not in self.exclude_objects:
+                stream.write("\n%s = " % attr)
+                stream.flush()
+                self.pp.pprint(self.mod.__getattribute__(attr) )
+        stream.flush()
+        stream.close() 
+
+    def printSettingVariables(self):
+        stream = sys.stdout
+        self.pp._stream=stream
+        keys = self.mod.__dict__.keys()
+        keys.sort()
+        for attr in keys:
+            if attr not in self.exclude_objects:
+                stream.write("\n%s = " % attr)
+                stream.flush()
+                self.pp.pprint(self.mod.__getattribute__(attr) )
+
+    def set(self, attr, value):
+        if value == '.':
+            value = os.path.abspath(value)
+        self.mod.__setattr__(attr, value)
+
+    def append(self, attr, value):
+        x = self.mod.__getattribute__(attr)
+        if value not in x:
+            x.append(value)
+            self.mod.__setattr__(attr, x)
+    def print_totals(self):
+        keys = self.mod.__dict__.keys()
+        keys.sort()
+        for attr in keys:
+            if attr not in self.exclude_objects:
+                if type(self.mod.__getattribute__(attr)).__name__ == 'str':
+                    print "\n%s = %s" % (attr, self.mod.__getattribute__(attr))
+                elif type(self.mod.__getattribute__(attr)).__name__ == 'list':
+                    print "\n%s = %d" % (attr, len(self.mod.__getattribute__(attr)))
+
+
+def grep( searchterm, file, multi, output):
+    found = False
+    def grepf(searcht, sourcefile, multi, output):
+        #print "searching %s for %s" % (sourcefile, searcht)
+        found = False
+        for linenum, lines in enumerate(open(sourcefile)):
+            if searcht in lines:
+                found = True
+                if os.path.basename(sourcefile) == 'latest.trim':
+                    dblines = lines.split("),(")
+                    if output:
+                        print "\t%d:%s : %-100.100s" % (linenum, sourcefile, dblines[0])
+                        for l in dblines:
+                            if searcht in l:
+                                print "\t\t%d:%s : %-100.100s" % (linenum, sourcefile, l)
+                elif output:
+                    print "\t%d:%s : %-100.100s" % (linenum, sourcefile, lines)
+                if not multi:
+                    return found
+        return found
+
+    filelist =[]
+    if type(file).__name__ == 'str':
+        filelist.append(file)
+    for sf in filelist:
+        if grepf(searchterm, sf, multi, output):
+            found = True
+    return found
+
+def search(proj, onefile, multi=False, output=True):
+    found = False
+    fn = 0
+    proj.mod.notfound = []
+    proj.mod.found = []
+    if not proj.mod.databasefile in map(lambda x: os.path.basename(x),proj.mod.sourcecodelist):
+        proj.mod.sourcecodelist.insert(0, proj.mod.databasefile)
+    if onefile == "all":
+        files = proj.mod.imagelist
+    else:
+        files = [onefile]
+    print "Searching for %s files in %s files" % ( len(files), len(proj.mod.sourcecodelist) )
+    for fullimage in files:
+        fn+=1
+        found = False
+        image = os.path.basename(fullimage)
+        for sfile in proj.mod.sourcecodelist:
+            if grep(image, sfile, multi, output):
+                if output:
+                    print "%d Found %s" % (fn, fullimage)
+                proj.mod.found.append(fullimage)
+                found = True
+                if not multi:
+                    break
+        if not found:
+            if output:
+                print "%d NOT found %s" % (fn, fullimage)
+                proj.mod.notfound.append(fullimage)
+
+
+def genIList(proj):
+    proj.mod.imagelist = []
+    rec = re.compile(".*.css$|.htaccess|.*.js$", re.I)
+    for root, dirs, files in os.walk(proj.mod.imagesdir):
+        if "tmp2" in dirs:
+            dirs.remove('tmp2')
+        for file in files:
+            if not rec.match(file):
+                f = os.path.join(root, file)
+                proj.append('imagelist', f)
+
+def genSList(proj):
+    proj.mod.sourcecodelist = []
+    rec = re.compile(".*.pyc$|.*.jpg$|.*.jpeg$|.*.mp3$|.*.pdf$|.*.fla$|.*.mov$|.*.png$|.*.gif$|.*.zip$|.*.swp$|.DS_Store|.*.tif$|.*.flv$|.*.swf$|.*.ppt$|.*.psd$", re.I)
+    for root, dirs, files in os.walk(proj.mod.sourcecodedir):
+        if ".svn" in dirs:
+            dirs.remove('.svn')
+        if ".git" in dirs:
+            dirs.remove('.git')
+        if "files" in dirs:
+            dirs.remove('files')
+        for file in files:
+            if not rec.match(file):
+                f = os.path.join(root, file)
+                if not os.path.islink(f):
+                    proj.append('sourcecodelist', f)
+
+
+
+if __name__ == "__main__":
+
+    us=""" Files Directory Stats"""
+    dd=""" 
+        This program is used to essentially do an audit on the files directory.  Currently for edutiopia /data/www/files.
+        
+        """
+
+    parser = optparse.OptionParser(usage=us, description= dd, add_help_option=True)
+
+    parser.add_option("-a", "--add", dest="add", nargs=2, help="add some value to a list")
+    parser.add_option("", "--proj",  dest="proj", help="File that contains the lists of files to sync. By default it searches for files matching *proj.py")
+    parser.add_option("-c", "--create", dest="create", help="Create a new project file with normal defaults.")
+    parser.add_option("", "--clean",     action="store_true", dest="clean", help="Clean the fileList List", default=False)
+    parser.add_option("-p", "--print", dest="print_settings", action="store_true", help="Print all settings", default=False)
+    parser.add_option("", "--pv", dest="printv", help="Print a specific setting" )
+    parser.add_option("", "--ps", dest="prints", action="store_true", help="Prints a list of settings", default=False)
+    parser.add_option("-i",  action="store_true", dest="images", help="Generate Images List",default=False)
+    parser.add_option("-s", "--set", dest="set", nargs=2, help="variable value  : 2 parameters, set variable to something")
+    parser.add_option("", "--source", action="store_true", dest="source", help="Generate Source Files List",default=False)
+    parser.add_option("-f",  dest="find", dest="find", help="Find a specific file", default="all")
+    parser.add_option("-d",  action="store_true", dest="delete", help="Delete files",default=False)
+    parser.add_option("-t",  action="store_true", dest="totals", help="Print Totals",default=False)
+    parser.add_option("", "--search", action="store_true", dest="search", help="Search for all images in all source code or only supplied file", default=False )
+    parser.add_option("", "--multi", action="store_true", dest="multi", help="Show multiple occurances rather than just one", default=False)
+    parser.add_option("", "--verbose", action="store_true", dest="verbose", help="verbose output", default=False)
+
+
+    (options, args) = parser.parse_args( )
+
+    defaults = {
+                'sourcecodedir':'/mnt/hgfs/web/unfud',
+                'imagesdir':'/data/www/files',
+                'databasefile':'latest.trim',
+                'notfound': [],
+                'found':[],
+                'imagelist':[],
+                'sourcecodelist':[],
+               }
+
+    if options.create:
+        settings = pySettingsMod( options.create, defaults , True)
+        settings.write(options.create)
+        settings.printall()
+    else:
+        settings = pySettingsMod( options.proj, defaults )
+
+    if options.images:
+        genIList(settings)
+        settings.write()
+
+    if options.set:
+        settings.set(options.set[0], options.set[1])
+        settings.write()
+
+    if options.delete:
+        for f in settings.mod.notfound:
+            os.system('rm -vf "%s"' % ( f ))
+
+    if options.print_settings:
+        settings.printall()
+
+    if options.source:
+        genSList(settings)
+        settings.write()
+
+    if options.printv:
+        settings.pp.pprint( settings.mod.__getattribute__(options.printv))
+
+    if options.prints:
+        settings.printSettingVariables()
+
+    if options.clean:
+        settings.clean()
+
+    if options.totals:
+        settings.print_totals()
+
+    if options.add:
+        settings.append(options.add[0], options.add[1]) 
+        settings.write()
+
+    if options.search:
+        search(settings, options.find, options.multi, options.verbose)
+        settings.write()
+        print "Found = %d " % len(settings.mod.found)
+        print "NOT found = %d " % len(settings.mod.notfound)

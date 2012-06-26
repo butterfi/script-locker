@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !/maintenance.html$ 
+RewriteCond %{REQUEST_URI} !/(.*edutopiaorg.gif)$ 
+RewriteRule $ /maintenance.html [R=302,L]

@@ -1,0 +1,176 @@
+#!/usr/bin/env python
+# -*- coding: ascii -*-
+# Author: Dan Shumaker
+# This program is used for updating the development machines. do a devprep -h for more information about usage.
+
+import sys,os,optparse,re
+
+if __name__ == "__main__":
+
+    us=""" Development Machine Prep"""
+    dd=""" Prepares your development machine to be up to date and ready for development"""
+
+    parser = optparse.OptionParser(usage=us, description= dd, add_help_option=True)
+
+    hostn = os.uname()[1]  
+    if not re.search('.edutopia.org', hostn):
+        hostn += ".edutopia.org"
+
+    def setdrush(host):
+        if host[0] != '@':
+            host = '-l ' + host
+
+        return [ 
+            'drush %s php-eval "actions_synchronize(actions_list(), TRUE);"' % host,
+            'drush %s updb -y' % host,
+            'drush %s -y en devel' % host,
+            'drush %s cc all' % host, 
+            'drush %s vset cache 0 -y' % host,
+            'drush %s vset preprocess_css 0 -y' % host,
+            'drush %s vset notifications_send_immediate 1 -y' % host,
+            'drush %s vset apachesolr_host 127.0.0.1 -y ' % ( host),
+            'drush %s dis woopra googleanalytics xmlsitemap -y' % host,
+            "drush %s sqlq 'truncate notifications; truncate notifications_event; truncate notifications_queue; truncate notifications_fields; truncate notifications_sent;'"  % host,
+                    ]
+
+    drushcmds = setdrush(hostn)
+
+    trimtables = [ 'sessions', 'accesslog', 'search_index', 'search_dataset',
+        'webform_submitted_data', 'notifications', 'notifications_event',
+        'notifications_queue', 'notifications_fields', 'notifications_sent']
+
+    parser.add_option("-a", "--all",  dest="all", action="store_true", help="Do all operations", default=False)
+    parser.add_option("", "--getdb", dest="getdb", action="store_true", help="copies database backup from einstein.", default=False)
+    parser.add_option("", "--trimdb",  dest="trimdb", action="store_true", help="unzips, and trims database of these tables= %s" % " ".join(trimtables), default=False)
+    parser.add_option("", "--importdb",  dest="importdb", action="store_true", help="unzips, and trims database", default=False)
+    parser.add_option("", "--adddel",  dest="adddel", action="store_true", help="deletes all add blocks", default=False)
+    parser.add_option("", "--gitb",  dest="gitb", action="store_true", help="does git checkout master", default=False)
+    parser.add_option("", "--settings",  dest="settings", action="store_true", help="Sets up the settings.php file", default=False)
+    parser.add_option("", "--files",  dest="files", action="store_true", help="rsyncs the files in the /data/www/files directory and removes files/js/* and files/css/* and files/tmp/* files", default=False)
+    parser.add_option("", "--drush",  dest="drush", help="Does drush cc, devel, and cache :Default:= \n%s\n]" % ";\n".join(drushcmds) )
+    parser.add_option("", "--restart",  dest="restart", action="store_true", help="restart apache, memcache, and varnish", default=False)
+    parser.add_option("", "--themeIA",  dest="themeIA", help="Does drush for setting up new theme." )
+    parser.add_option("", "--staging",  dest="staging", help="Does drush for setting staging" )
+
+    (options, args) = parser.parse_args( )
+
+    if options.all:
+        options.getdb = True
+        options.trimdb = True
+        options.importdb = True
+        options.addel = True
+        options.gitb = True
+        options.settings = True
+        options.files = True
+        options.drush = host
+        options.restart = True
+
+    if options.getdb:
+        print "downloading latest and unzipping database"
+        user = os.getlogin()
+        os.system("rm -rf latest.gz latest")
+        os.system("scp %s@einstein.edutopia.org:/data/backups/latest.gz ." % user)
+        os.system("gunzip latest.gz")
+
+    if options.trimdb:
+        print "Trimming database"
+        sedf = 'delete_dev_inserts.sed'
+        if os.path.exists(sedf):
+            os.system("rm %s" % sedf)
+        os.system("touch %s" % sedf)
+        for table in trimtables:
+            os.system("echo '/INSERT INTO `%s`/d' >> %s" % (table,sedf))
+        os.system("sed -f %s latest > latest.trim" % (sedf))
+        os.system("rm %s" % sedf)
+
+    if options.importdb:
+        if options.trimdb:
+            db = 'latest.trim'
+        else:
+            db = 'latest'
+        print "Importing database"
+        os.system("mysql < %s" % db)
+
+    if options.adddel:
+        print "deleting ad blocks"
+        mysql = """DELETE from boxes where info like \'%Ad Block%\';delete from boxes where info like \'%-Ad%\';delete from boxes where info like \'% Ad %\'; delete  from boxes where info like \'% Ad%\';"""
+        print mysql
+        os.system('echo "%s" | mysql' % mysql)
+
+    if options.gitb:
+        print "git checkout the master"
+        os.system("cd /data/www; git checkout master -f; git pull")
+
+    if options.settings:
+        print "setting up the settings.php file for local dev"
+        os.system("sed  's/10.0.20.40/localhost/' sites/default/settings.php > sites/default/settings.php2")
+        os.system("sed  's/^\$base_url/#\$base_url/' sites/default/settings.php2 > sites/default/settings.php")
+        os.system("sed  's/^\$update_free_access = FALSE/\$update_free_access = TRUE/' sites/default/settings.php > sites/default/settings.php2")
+        os.system("echo 'sites/default/settings.php' >> .git/info/exclude")
+        os.system("git update-index --assume-unchanged sites/default/settings.php")
+        os.system("mv sites/default/settings.php2 sites/default/settings.php")
+
+    if options.files:
+        print "rsyncing /data/www/files directory with production"
+        os.system("rsync -avz --del dshumaker@edutopia.org:/var/www/files/ /data/www/files")
+        print "removing /data/www/files/js/* , /data/www/files/css/* , /data/www/files/tmp"
+        os.system("rm -rf /data/www/files/js/*")
+        os.system("rm -rf /data/www/files/css/*")
+        os.system("rm -rf /data/www/files/tmp/*")
+
+    if options.drush:
+        print "clearing cache and turning off css compression"
+        drushcmds = setdrush(options.drush)
+        for dc in drushcmds:
+            print dc 
+            os.system(dc)
+
+    if options.staging:
+        print "preping staging"
+        stagingcmds = [ 
+            'drush %s updb -y' % host,
+            'drush %s vset apachesolr_host 127.0.0.1 -y ' % ( host),
+            'drush %s dis woopra googleanalytics xmlsitemap -y' % host,
+            'drush %s cc all' % host, 
+                    ]
+        for dc in stagingcmds:
+            print dc 
+            os.system(dc)
+
+    if options.restart:
+        print "restarting apache memcache and varnish"
+        os.system("sudo /etc/init.d/apache2 restart")
+        os.system("sudo /etc/init.d/memcached restart")
+        os.system("sudo /etc/init.d/varnish restart")
+
+    # Leave this in for good drush examples
+    if options.themeIA:
+        if options.themeIA[0] != '@':
+            print "themeIA requires drush alias, aborting"
+            exit()
+
+        host = options.themeIA
+
+        drushcmds = [
+            'drush %s dis edutopia_footer edutopia_masthead chapter3_login edutopia_dg_images edutopia_default_views panels page_manager stylizer views_content chapter3_panels -y' % host,
+            'drush %s pm-uninstall edutopia_footer edutopia_masthead chapter3_login edutopia_dg_images edutopia_default_views panels page_manager stylizer views_content chapter3_panels -y' % host,
+            'drush %s -y updatedb' % host,
+            'drush %s en hextopia -y'% host,
+            "drush %s sql-query \"update variable set value = 's:8:\"hextopia\";' where name = 'theme_default';\" " % host,
+            'drush %s sql-query "update blocks set status = 0, region = \'\' where theme = \'hextopia\';" '% host,
+            "drush %s sql-query 'update node set status = 1 where nid = 6593 LIMIT 1;'   "% host,
+            'drush %s -y pm-enable context context_block_class context_layouts context_ui edutopia_menus_sr edutopia_views_dg edutopia_menus_stw edutopia_contexts_sr header_footer_ui views_slideshow_singleframe vud_comment edutopia_video edutopia_views_comments edutopia_views_core_concepts edutopia_views_featured edutopia_views_general edutopia_views_glp edutopia_views_groups edutopia_views_poll edutopia_views_recent_content edutopia_views_related_content edutopia_views_sage_advice edutopia_views_user edutopia_views_video edutopia_blocks_glp drush_views edutopia_blocks_dg edutopia_blocks_stw edutopia_menus_ndfl1 edutopia_menus_ndfl2 edutopia_contexts_ndfl1 edutopia_contexts_ndfl2 edutopia_contexts_homepage edutopia_contexts_video edutopia_contexts_blog edutopia_contexts_articles edutopia_contexts_poll edutopia_contexts_glp menu_item_container menu_attributes edutopia_contexts_search edutopia_contexts_group edutopia_contexts_core_strategies edutopia_contexts_dg edutopia_contexts_stw edutopia_user edutopia_contexts_webform edutopia_contexts_user stringoverrides edutopia_blocks_webforms edutopia_contexts_banner_ad' % host,
+            'drush %s ev \'variable_set("solr_preselect_search_vocabs", array(11 => 11))' % host,
+            'drush %s php-script --script-path=/data/www/hextopia-configuration-scripts/delete_blocks/delete_blocks.php'% host,
+            'drush %s -y pm-disable authors '% host,
+            'drush %s "views delete" latest_discussion admin_recategorize big_list comments_numbered content_ratings edutopia_og edutopia_profile_groups grades guide_discussions  guide_display_resources inceptum_discussions inceptum_profiles inceptum_profiles_groups recent_blogposts recent_groups_activity school_stakeholder slates spam_comments spiral_notebook stimulus_more_stories user_comments video_gallery video_sitemap video_slides member_register_report member_view profile_test glp_display_blog_new glp_display_dis_com glp_display_editors_choice glp_display_featured_user glp_display_featured_video glp_display_taxonomy glp_nr_comm_discussions glp_nr_edchoice_additional glp_nr_edchoice_featured_primary glp_nr_edchoice_stw glp_nr_edchoice_video glp_ur_featured_user og_members og_members_faces og_tracker forward_forwards'% host,
+            'drush %s php-script --script-path=/data/www/hextopia-configuration-scripts/misc_drush/misc.drush.php '% host,
+            '`drush %s sql-connect` < /data/www/hextopia-configuration-scripts/block_titles/block_titles.sql'% host,
+            'drush %s php-script --script-path=/data/www/hextopia-configuration-scripts/taxo_recat/stw_swt.php '% host,
+            'drush %s php-script --script-path=/data/www/hextopia-configuration-scripts/views-config/views-disable.php '% host,
+            'drush %s php-script --script-path=/data/www/hextopia-configuration-scripts/stw-nodeedit_landingpages/stw_nodeedit.drush.php' % host,
+        ]
+        for dc in drushcmds:
+            print dc 
+            os.system(dc)
+

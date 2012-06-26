@@ -1,0 +1,10 @@
+#!/bin/bash -x
+# Dan Shumaker
+# Script used to update the dev servers with the data from einstein:/data/www/files
+
+rsync -avz --del dan@einstein.edutopia.org:/data/www/files/ /data/www/files 
+sudo chmod -R 777 /data/www/files 
+sudo \rm -rf /data/www/files/tmp/*
+sudo \rm -rf /data/www/files/css/*
+sudo \rm -rf /data/www/files/js/*
+

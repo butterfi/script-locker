@@ -1,0 +1,84 @@
+#!/usr/bin/env python
+# Author: Dan Shumaker
+# Date: 7/7/2011
+
+import os, optparse, sys,subprocess
+
+def head(output):
+    if len(output):
+        cout(output.splitlines()[0])
+
+def apc(output):
+    if len(output) and len(output.splitlines()) > 3:
+        lines = output.splitlines()
+        try:
+            i = lines.index('apc')
+            cout('APC' + lines[i+3])
+        except ValueError:
+            print 'APC not found'
+    
+def printcmd(printcmds, cmd):
+    if os.path.exists(cmd['cmd']):
+        out = subprocess.Popen(executable="/bin/bash", args=["%s %s" % (cmd['cmd'], cmd['par'])], shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT ).stdout.read() 
+        if printcmds:
+            print "%s %s" % (cmd['cmd'] , cmd['par'])
+
+        if cmd.has_key('post'):
+            cmd['post'](out)
+        else:
+            cout(out)
+    else:
+        print cmd['cmd'] , "command not found"
+
+def tail(output):
+    if len(output):
+        lines = output.splitlines()
+        cout(lines[len(lines)-1])
+
+def procs(output):
+    if len(output):
+        lines = output.splitlines()
+        num = lines[len(lines)-1].split()[2]
+        cout("Processors = %d" % (int(num) + 1))
+
+def cout(str):
+    if len(str):
+        first = str.split()[0]
+        second = " ".join(str.split()[1:])
+        print "%-15.20s %s" % (first, second)
+
+if __name__ == "__main__":
+    us=""" Stack Version"""
+    dd=""" Print the software versions on the machine"""
+
+    parser = optparse.OptionParser(usage=us, description= dd, add_help_option=True)
+    parser.add_option("-p", "--print", dest="printcmds", action="store_true", help="Print the commands as well as output.", default=False)
+    (options, args) = parser.parse_args( )
+
+    softwares = [
+        { 'cmd':'/usr/bin/lsb_release', 'par': '-d', 'post':head}, 
+        { 'cmd':'/usr/sbin/apache2', 'par':'-v', 'post':head},
+        { 'cmd':'/usr/bin/mysql', 'par': '--version', 'post':head}, 
+        { 'cmd':'/usr/bin/php' , 'par':'-v', 'post':head}, 
+        { 'cmd':'/usr/sbin/varnishd', 'par': '-V', 'post':head}, 
+        { 'cmd':'/usr/bin/memcached', 'par':'-i', 'post':head}, 
+        { 'cmd':'/usr/bin/java', 'par':'-version', 'post':head},
+        { 'cmd':'/usr/bin/php', 'par':'-i', 'post':apc },
+        { 'cmd':'/usr/bin/git', 'par':'--version', 'post':head},
+    ]
+
+    hardware = [ 
+        { 'cmd': '/bin/grep' , 'par':'"MemTotal" /proc/meminfo', 'post':head },
+        { 'cmd':'/bin/grep', 'par':'"cpu cores" /proc/cpuinfo', 'post':head},
+        { 'cmd':'/bin/grep', 'par':'"processor" /proc/cpuinfo', 'post':procs},
+        { 'cmd':'/bin/grep', 'par':'"model name" /proc/cpuinfo', 'post':head },
+        {'cmd':'/bin/grep','par':'"cpu MHz" /proc/cpuinfo', 'post':head}]
+
+    print "\n\n=====SOFTWARE======="
+    for software in softwares:
+        printcmd(options.printcmds,software)
+
+    print "\n\n=====HARDWARE======="
+    for metal in hardware:
+        printcmd(options.printcmds,metal)
+

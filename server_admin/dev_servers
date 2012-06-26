@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+# Dan Shumaker
+# Edutopia   10/3/2011
+
+import os,sys
+
+command = sys.argv[1:]
+machines = ['hopper.edutopia.org','dev.edutopia.org', 'einstein.edutopia.org', 'staging.edutopia.org' ]
+for m in machines:
+    cmd ='ssh dan@%s "%s"' % (m, " ".join(command))
+    print cmd
+    os.system(cmd)

@@ -1,0 +1,129 @@
+#!/bin/bash 
+# Dan Shumaker
+#
+# Script used to update the servers site with the new git repository on unfuddle.
+# Requires
+#    1. port 9418 (standard git port ) to be open
+#    2. ssh keys on unfuddle account.
+#    3. read/write permission to the /data directory
+#    4. /usr/local/bin/edutopia/drush/drush executable in path.
+#    5. git in path
+#
+# usage:  You can execute it from any directory. It auto recognizes the machine it's on.
+#     
+#    Depending on how many post-install drush commands you have it should complete in about a minute.
+#
+#    /usr/local/bin/edutopia/server_admin/prod_update 
+#
+
+da="@prod"
+case "$HOSTNAME" in
+		einstein)
+				da="@ein"
+				;;
+		dev)
+				da="@dev"
+				;;
+		hopper)
+				da="@hop"
+				;;
+		staging)
+				da="@stage"
+				;;
+        vm)
+                da="@vm"
+                ;;
+esac
+
+do_update() {
+
+	# These next six lines can be moved to right before the POST-PUSH-INSTALL section if 
+	# the pre-install drush commands your running won't break anything. Otherwise these lines
+	# should be the first thing you do.
+
+        # Backup the REAL .htaccess file for use (restoration later).
+	cp /data/www/.htaccess /data
+
+        # Put temp htaccess and maintenance.html in place. 
+	cp /usr/local/bin/edutopia/server_admin/maintenance.html /data/www 
+	cp /usr/local/bin/edutopia/server_admin/.htaccess /data/www/
+
+        # Put any pre-install drush commands here, this is useful for modules that get moved or 
+        #    removed and need to be disabled before the new repo gets put in place. Don't 
+        #    forget to uninstall modules too.
+        #
+	# /usr/local/bin/edutopia/drush/drush $1 dis giveaway -y
+
+#drush @prod dis features -y
+
+        #
+        # Put drupal in offline mode:
+        #     NOTE: Not using this anymore because drupal/drush is too slow with a lot of users and 
+#       /usr/local/bin/edutopia/drush/drush $1 vset site_offline 1 --always-set
+
+        # Setting the umask so that when this script is used on dev servers the .git dirctory will
+        # be writable by the group.  Most peoples default umask is 022 (not group writable) which 
+        # causes git checkouts to fail with permission errors.
+
+		umask 002
+		now=`date "+%m-%d-%y_%a_%H_%M"`
+		cd /data/
+		git clone git@edutopia.unfuddle.com:edutopia/production.git www-new
+		mv /data/www/files /data/
+		mv /data/www /data/www-bak-${now}
+		mv /data/www-new /data/www
+		mv /data/files /data/www/
+		cd /data/www
+        # If on production then move git directory to parent and away from prying eyes.
+        if [[ "$1" == '@prod' ]]; then
+            mv /data/www/.git /data/.git-${now}
+        fi
+
+        # Put drupal site into offline mode. (Leaving this for reference)
+	# /usr/local/bin/edutopia/drush/drush $1 vset site_offline 0 --always-set
+        # We don't have to put drupal in offline mode anymore because of the maintenance.html+.htaccess method in place.
+
+        # Add any POST-PUSH-INSTALL drush commands here ##########################################
+        #
+	# Need this copy as well as the ones in the beginning because the ones copied over in the beginning
+	# have been moved to the /data/www-bak-${now} directory
+	# This will not prevent the varnish error message from coming up but will prevent other errors from appearing
+        # Backup the REAL .htaccess file for use (restoration later).
+	cp /data/www/.htaccess /data
+
+        # Put temp htaccess and maintenance.html in place. 
+	cp /usr/local/bin/edutopia/server_admin/maintenance.html /data/www 
+	cp /usr/local/bin/edutopia/server_admin/.htaccess /data/www/
+
+#/usr/local/bin/edutopia/drush/drush $1 updb -y
+#drush @prod en features, chapter3_library, edutopia_context_assessment_localnav, edutopia_context_is_localnav, edutopia_context_pbl_localnav, edutopia_context_sel_localnav, edutopia_context_ti_localnav, edutopia_contexts_advertise, edutopia_contexts_blog, edutopia_contexts_dg, edutopia_contexts_foundation, edutopia_contexts_group, edutopia_contexts_poll, edutopia_contexts_sidebar, edutopia_contexts_sr, edutopia_contexts_video, edutopia_guides_feature, edutopia_menus_ndfl1, edutopia_menus_ndfl2, edutopia_menus_sr, edutopia_menus_stw, foundation_menus, giveaway_contexts, header_footer_ui, polaroid_fieldset, research_based_indicator, servers, stw_cochrane, stw_mesquite -y
+
+#drush @prod fr header_footer_ui -y
+#drush @prod sqlq "delete from menu_links where mlid=54905"
+
+	# don't need a clear cache if you are doing an updb because updb does a cc all.
+        #/usr/local/bin/edutopia/drush/drush $1 cc all
+
+	# We don't have permission on Neovera servers to do this so exclude prod for now.  Otherwise clear all temp files.
+        if [[ "$1" != '@prod' ]]; then
+		    sudo rm -rvf /data/www/files/tmp/*
+		    sudo rm -rvf /data/www/files/css/*
+		    sudo rm -rvf /data/www/files/js/*
+        fi
+
+        rm /data/www/maintenance.html
+        # Restore .htaccess
+	mv /data/.htaccess /data/www
+
+	sudo /etc/init.d/apache2 restart
+	sudo /etc/init.d/memcached restart
+	sudo /etc/init.d/varnish restart
+
+        # Since git doesn't store read/write permissions (only executable) we need to chmod this for multi-user usage.
+        # If the root repo is not writable then the alternate (non-owning) user will not be able to move the files directory out of the 
+        # root directory (line 64 of this script).
+        chmod g+w /data/www
+}
+
+# The time function simply prints out timing statistics which are useful to keep track of for reporting to management.
+time do_update $da
