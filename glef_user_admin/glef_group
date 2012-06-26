@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+# Dan Shumaker
+# Edutopia
+#  Simply sets all users to be in the glef group on all our dev servers.  You shouldn't have to use this if the users were created using the create_user script
+# that automatically makes them apart of the glef group.
+# 10/3/2011
+
+import os
+machines = ['hopper.edutopia.org','dev.edutopia.org', 'einstein.edutopia.org', 'staging.edutopia.org' ]
+users = ['dan', 'geoff', 'anais', 'laurie','chris','rj', 'hubert']
+for m in machines:
+    gcmd = ''
+    for user in users:
+        gcmd += 'sudo usermod -g glef %s;' % user
+    cmd ='ssh dan@%s "%s"' % (m, gcmd)
+    print cmd
+    os.system(cmd)

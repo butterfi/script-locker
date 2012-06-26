@@ -1,0 +1,35 @@
+#!/bin/bash 
+# Dan Shumaker
+
+# example usage:   
+#    >>   create_dev_user.bash blablausername
+#
+#  This will create a user with username = blablausername 
+#  They will have a password of blablausername1234 and be added to the glef group.
+#
+#
+#useradd -m -N $1 -G glef
+#usermod -g glef $1
+#passwd $1
+# tried doing this perl on the command line but it didn't work.
+#useradd -G glef -p $(perl -e'print crypt("foo", "aa")') -m -N $1
+
+# adds the glef group with a force just in case it already exists.
+groupadd -f glef
+p=`./crypt_it.pl $1`
+useradd -G glef -p $p -m -N $1 -s /bin/bash
+usermod -g glef $1
+
+echo "Initial Password settings:"
+# Expire the password already by making it 366 days old.
+# BSD date command takes the -v parameter different.
+# expire=`date -v-1y -v-1d +%Y-%m-%d`
+expire=`date -d "-1 year -1 day" +%Y-%m-%d`
+chage -l $1
+chage -W 30 $1
+chage -M 365 $1
+chage -I 10 $1
+chage -E -1 $1
+chage -d $expire $1
+echo "Modified Password settings:"
+chage -l $1
